@@ -25,3 +25,5 @@ paginate: 5
 permalink: pretty
 # Build settings
 markdown: kramdown
+gems:
+  - jekyll-sitemap

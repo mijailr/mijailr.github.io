@@ -16,7 +16,7 @@
 title: Mijail Rondon
 email: yo@mijailr.com
 description: 'Blog personal de <a href="https://twitter.com/mijailr">@MijailR</a>'
-tagline: "|> Programador y aficionado al DIY"
+tagline: "Programador y aficionado al DIY"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://mijailr.com" # the base hostname & protocol for your site
 twitter_username: mijailr

@@ -15,6 +15,46 @@ No había tenido previamente ninguna experiencia con **Functional Programming** 
 
 Hay que dedicarle un tiempo a esa sección y derrepente sentirás que la _programación funcional_ es más natural que la _orientada a objetos_. Llegados a este punto, hay que leer obligatoriamente la guía [_"Elixir Getting Started Guide"_](https://elixir-lang.org/getting-started/introduction.html) mientras lo leía, se me hacía necesario aplicar algunos elementos para entender mejor su funcionamiento, por lo que empecé a utilizar [Exercism](https://exercism.io) para realizar algunos ejercicios. También realicé completo el [elixir-koans](https://github.com/elixirkoans/elixir-koans) lo cual es muy util para entender algunos comportamientos.
 
+La sintaxis de Elixir está inspirada en Ruby y esa es una de las cosas que más me agrada, lo otro que le da un plus es que la comunidad apenas está creciendo, por lo que representa una oportunidad para aportar en el desarrollo.
+
+Aqui dejo un ejemplo del famoso `HolaMundo` para Ruby y Elixir respectivamente
+
+{% highlight ruby %}
+# Con Ruby
+module HolaMundo
+  def self.hola(quien = "Mundo")
+    puts "Hola #{quien}!"
+  end
+end
+{% endhighlight %}
+
+Luego en `irb`
+
+```irb
+001> HolaMundo.hola "Mijail"
+Hola Mijail!
+=> nil
+```
+
+{% highlight elixir %}
+# Con Elixir
+defmodule HolaMundo do
+  def hola(quien \\ "Mundo") do
+    IO.puts "Hola #{quien}!"
+  end
+end
+{% endhighlight %}
+
+Luego en `iex`
+
+```iex
+iex(1) HolaMundo.hola "Mijail"
+Hola Mijail!
+:ok
+```
+
+Como pueden notar, se parecen tanto que parece lo mismo, de verdad recomiendo empezar ya a aprender Elixir.
+
 Actualmente estoy leyendo _"Elixir in Action"_ para profundizar un poco más en el tema.
 
 **OJO:** Recomiendo también unirse al canal en [#Slack elixir-lang](https://elixir-slackin.herokuapp.com/)

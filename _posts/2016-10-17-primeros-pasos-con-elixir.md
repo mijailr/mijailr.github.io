@@ -30,11 +30,11 @@ end
 
 Luego en `irb`
 
-```irb
+{% highlight ruby %}
 001> HolaMundo.hola "Mijail"
 Hola Mijail!
 => nil
-```
+{% endhighlight %}
 
 {% highlight elixir %}
 # Con Elixir
@@ -47,11 +47,11 @@ end
 
 Luego en `iex`
 
-```iex
-iex(1) HolaMundo.hola "Mijail"
+{% highlight elixir %}
+iex(1)> HolaMundo.hola "Mijail"
 Hola Mijail!
 :ok
-```
+{% endhighlight %}
 
 Como pueden notar, se parecen tanto que parece lo mismo, de verdad recomiendo empezar ya a aprender Elixir.
 

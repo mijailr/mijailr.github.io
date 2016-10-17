@@ -36,7 +36,7 @@ Hola Mijail!
 => nil
 {% endhighlight %}
 
-Con Elixir no es muy diferente, sólo que en vez de `module` se usa `defmodule` (las clases no existen), para cada inicio de bloque hay que usar `do` y para usar `puts` hay que hacer referencia al módulo que lo contiene `IO` a menos que lo hagas `alias` pero no voy a profundizar en eso por ahora.
+Con Elixir no es muy diferente, sólo que en vez de `module` se usa `defmodule` (las clases no existen), para cada inicio de bloque hay que usar `do`, los valores predeterminados de una variable se definen con `\\` y para usar `puts` hay que hacer referencia al módulo que lo contiene `IO` a menos que lo hagas con `alias` pero no voy a profundizar en eso por ahora.
 
 {% highlight elixir %}
 # Con Elixir

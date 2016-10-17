@@ -1,7 +1,6 @@
 ---
 layout: page
-title: Sobre mi
-permalink: /about/
+title: Sobre Mi
 ---
 
-Luego te digo
+TODO

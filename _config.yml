@@ -15,12 +15,15 @@
 # in the templates via {{ site.myvariable }}.
 title: Mijail Rondon
 email: yo@mijailr.com
-description: Programador y aficionado al DIY #OSHW Miembro del Consejo Político Nacional del @PartidoREDES
+description: 'Blog personal de <a href="https://twitter.com/mijailr">@MijailR</a>'
+tagline: "Programador y aficionado al DIY"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://mijailr.com" # the base hostname & protocol for your site
 twitter_username: mijailr
 github_username:  mijailr
-
+paginate: 5
+permalink: pretty
 # Build settings
 markdown: kramdown
-theme: minima
+gems:
+  - jekyll-sitemap

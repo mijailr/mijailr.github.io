@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Iniciando con Jekyll!"
+title:  "Nuevo Blog!"
 date:   2016-10-01 23:27:43 -0400
-categories: jekyll personal
+categories: jekyll
 ---
 
 Durante varios años (2008-2012) mantuve un blog con wordpress con mi dominio mijailr.com, sin embargo, por algunas cuestiones que aún no me explico, perdí el dominio y fue comprado por alguien que me pedía 200$ para devolvermelo, una total locura, pero luego de varios años (3) y por curiosidad, volví a chequear el status del dominio y para mi sorpresa, estaba disponible nuevamente.

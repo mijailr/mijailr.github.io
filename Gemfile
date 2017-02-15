@@ -22,5 +22,5 @@ group :jekyll_plugins do
   # gem "jekyll-github-metadata", "~> 1.0"
   gem "github-pages"
   gem "jekyll-sitemap"
-  gem "jekyll-categories"
+  gem 'jekyll-paginate-category'
 end

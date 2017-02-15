@@ -25,5 +25,9 @@ paginate: 5
 permalink: pretty
 # Build settings
 markdown: kramdown
+paginate_path: "page:num"
+category_dir: "categorias"
+category_layout: "index.html"
 gems:
   - jekyll-sitemap
+  - jekyll-paginate-category

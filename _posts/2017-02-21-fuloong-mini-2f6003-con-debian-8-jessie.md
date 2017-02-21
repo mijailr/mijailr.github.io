@@ -8,7 +8,7 @@ date: 2017-02-21
 En el laboratorio de Hardware de la Comuna Tecnológica Don Luís Zambrano tenemos disponibles unas Fuloong Mini 2F6003, sin embargo vienen con una distribución modificada de Debian cuyos repositorios ya no están disponibles.
 
 {% include images.html
-            img="images/fuloong/fuloong-mini.jpg"
+            img="public/images/fuloong/fuloong-mini.jpg"
             title="Fuloong Mini"
             caption="Fuloong Mini 2F6003" %}
 

@@ -26,15 +26,10 @@ Y configuramos un TFTP de la siguiente manera:
 
 Conectamos el Fuloong al teclado, red y monitor y presionamos `<SUPR>` para obtener el prompt de PMON (Suponiendo que el servidor TFTP está en 192.168.1.1):
 
-    PMON> devls #para ver el nombre de la tarjeta de red en este caso rtk0
-    PMON> ifaddr rtk0 192.168.1.2
-    PMON> load -r -f bfc00000 tftp://192.168.1.1/fuloong/pmon-LM60xx-1.3.6a.bin
+    {% gist db5794341b0cb00d53e0d158bd76e158 pmon_upgrade.txt  %}
 
 Luego hacer un reboot y esta vez notaremos que hay diferencias cuando arranca el sistema, presionamos nuevamente `<SUPR>` para ingresar al PMON:
 
-    PMON> ifaddr rtk0 192.168.1.2
-    PMON> load tftp://192.168.1.1/fuloong/jessie/vmlinuz-3.16.0-4-loongson-2f
-    PMON> initrd tftp://192.168.1.1/fuloong/jessie/initrd.gz
-    PMON> g
+    {% gist db5794341b0cb00d53e0d158bd76e158 pmon_load_debian.txt   %}
 
 Y ya con esto inicia la instalación de Debian Jessie.

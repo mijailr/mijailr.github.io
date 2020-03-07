@@ -28,6 +28,6 @@ markdown: kramdown
 paginate_path: "page:num"
 category_dir: "categorias"
 category_layout: "index.html"
-gems:
+plugins:
   - jekyll-sitemap
   - jekyll-paginate-category

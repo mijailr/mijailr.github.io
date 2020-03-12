@@ -4,8 +4,7 @@ title: Dynamic git config - Use diferent profiles per folder
 date: 2020-03-11 23:06 -0500
 ---
 
-Some times we need to use diferent git profiles to have meaningfull commits signatures when we need to use work profiles
-or personal profiles.
+Some times we need to use different git profiles to have meaningful commits signatures when we need to use work profiles or personal profiles.
 
 You can do this if you use `git >= 2.13` with the rule `includeIf` you can choose when to use a particular profile when
 you are on a specific folder or subfolders.

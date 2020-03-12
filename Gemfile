@@ -8,6 +8,7 @@ gem 'jekyll', '>= 3.7.4'
 group :jekyll_plugins do
   # gem 'jekyll-github-metadata', '~> 1.0'
   gem 'github-pages'
+  gem 'jekyll-compose'
   gem 'jekyll-paginate-category'
   gem 'jekyll-sitemap'
 end

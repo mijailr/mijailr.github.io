@@ -28,3 +28,16 @@ And you should have a file like `~/.gitconfig-work` (for this example) with this
 {% endhighlight %}
 
 You can add as many `includeIf` as you need.
+
+So now if you cd to any git project inside `~/Projects/Work` your git config should be like this:
+
+{% highlight sh %}
+~ $ git config user.email
+your.personal.email@example.org
+~ $ cd ~/Projects/Work/some-project
+~/Projects/Work/some-project $ git config user.email
+your.work.email@example-company.com
+~/Projects/Work/some-project $ cd ~/Projects/personal-website
+/Projects/personal-website $ git config user.email
+your.personal.email@example.org
+{% endhighlight %}

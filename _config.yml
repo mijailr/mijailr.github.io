@@ -15,8 +15,8 @@
 # in the templates via {{ site.myvariable }}.
 title: Mijail Rondon
 email: yo@mijailr.com
-description: 'Blog personal de <a href="https://twitter.com/mijailr">@MijailR</a>'
-tagline: "Programador y aficionado al DIY"
+description: 'Blog <a href="https://twitter.com/mijailr">@MijailR</a>'
+tagline: "Developer, hacker, and free software activist."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://mijailr.com" # the base hostname & protocol for your site
 twitter_username: mijailr
@@ -26,7 +26,7 @@ permalink: pretty
 # Build settings
 markdown: kramdown
 paginate_path: "page:num"
-category_dir: "categorias"
+category_dir: "category"
 category_layout: "index.html"
 plugins:
   - jekyll-sitemap

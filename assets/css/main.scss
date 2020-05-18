@@ -1,0 +1,29 @@
+---
+---
+@import "variables";
+
+@import "bootstrap/scss/bootstrap";
+@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css);
+body{
+  color: $dark;
+}
+.profile{
+  font-family: $fira-code;
+  margin: 1rem 0;
+  h1{
+    text-align: center;
+    small{
+      font-style: italic;
+      display: block;
+      font-size: 1.3rem;
+    }
+  }
+}
+.profile-links {
+  a {
+    margin-left: 0.5rem;
+
+  }
+}
+
+

@@ -19,5 +19,5 @@ sass:
   load_paths:
     - _scss
     - node_modules
-  style: compact
+  style: compressed
 

@@ -4,15 +4,16 @@ title: Home
 ---
 
 <div class="posts">
+  <h2>Articles</h2>
   {% for post in paginator.posts %}
   <div class="post">
+
+    <span class="post-date">{{ post.date | date_to_string }}</span>
     <h1 class="post-title">
       <a href="{{ post.url | prepend: site.baseurl }}">
         {{ post.title }}
       </a>
     </h1>
-
-    <span class="post-date">{{ post.date | date_to_string }}</span>
 
     {{ post.excerpt }}
   </div>

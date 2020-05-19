@@ -1,16 +1,37 @@
 ---
 ---
 @import "variables";
+@import "highlight";
 
 @import "bootstrap/scss/bootstrap";
 @import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css);
+@import url(https://fonts.googleapis.com/css2?family=PT+Sans&display=swap);
+
 body{
   color: $dark;
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 680px;
+  }
+}
+header {
+  margin-bottom: 1rem;
+}
+code {
+  font-family: $fira-code;
 }
 .profile{
   font-family: $fira-code;
   margin: 1rem 0;
   h1{
+    a {
+      color: $dark;
+      text-decoration: none;
+      &:hover{
+        text-decoration: none;
+      }
+    }
     text-align: center;
     small{
       font-style: italic;
@@ -26,4 +47,20 @@ body{
   }
 }
 
-
+.posts {
+  h2{
+    font-size: 1.6rem;
+    font-family: $fira-code;
+    text-transform: uppercase;
+  }
+}
+.post {
+  h1{
+    line-height: 1;
+    color: $link-color;
+    font-size: 2rem;
+  }
+  .post-date {
+    font-style: italic;
+  }
+}

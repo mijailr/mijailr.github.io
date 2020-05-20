@@ -9,6 +9,7 @@ github_username:  mijailr
 paginate: 5
 permalink: pretty
 markdown: kramdown
+highlighter: rouge
 paginate_path: "page:num"
 category_dir: "category"
 category_layout: "index.html"

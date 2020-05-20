@@ -1,7 +1,7 @@
 ---
 ---
 @import "variables";
-@import "highlight";
+// @import "highlight";
 
 @import "bootstrap/scss/bootstrap";
 @import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css);
@@ -47,12 +47,11 @@ code {
   }
 }
 
-.posts {
-  h2{
-    font-size: 1.6rem;
-    font-family: $fira-code;
-    text-transform: uppercase;
-  }
+.posts h2, .related h2{
+  font-size: 1.6rem;
+  font-family: $fira-code;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
 }
 .post {
   h1{
@@ -63,4 +62,31 @@ code {
   .post-date {
     font-style: italic;
   }
+
+  &:last-of-type{
+    margin-bottom: 2rem;
+  }
+}
+
+.image-wrapper {
+  color: rgb(88, 96, 105);
+  padding: 0.3rem;
+  border: 1px solid rgb(221, 221, 221);
+  background-color: rgb(247, 247, 247);
+  border-radius: 3px;
+  margin-bottom: 1rem;
+  .image-caption {
+    text-align: center;
+    font-style: italic;
+    font-size: 0.9rem;
+    margin: 0.2rem;
+  }
+}
+
+.related {
+h3 {
+  font-size: 1.3rem;
+}
+
+
 }

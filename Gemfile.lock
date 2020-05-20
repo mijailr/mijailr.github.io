@@ -250,6 +250,7 @@ DEPENDENCIES
   jekyll-compose
   jekyll-paginate-category
   jekyll-sitemap
+  rouge
 
 RUBY VERSION
    ruby 2.6.5p114

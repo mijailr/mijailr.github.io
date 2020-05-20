@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 ruby RUBY_VERSION
 
 gem 'jekyll', '>= 3.7.4'
+gem 'rouge'
 
 group :jekyll_plugins do
   # gem 'jekyll-github-metadata', '~> 1.0'

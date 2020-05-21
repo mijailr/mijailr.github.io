@@ -1,0 +1,53 @@
+name: deploy
+on:
+  push:
+    branches:
+      - build
+env:
+  RUBY_VERSION: '2.6.5'
+  NODE_VERSION: '12'
+  JEKYLL_ENV: production
+
+jobs:
+  deploy:
+    name: deploy
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Setup ruby
+        uses: ruby/setup-ruby@master
+        with:
+          ruby-version: ${{ env.RUBY_VERSION }}
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: Recover Ruby dependency cache
+        uses: actions/cache@v1
+        with:
+          path: ./vendor/bundle
+          key: ${{ runner.OS }}-rubydeps-${{ hashFiles('Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.OS }}-rubydeps-${{ env.cache-name }}-
+            ${{ runner.OS }}-rubydeps-
+            ${{ runner.OS }}-
+      - name: Install Ruby deps
+        run: bundle install --path vendor/bundle --jobs 4 --retry 3
+      - name: Install node deps
+        run: npm install
+      - name: Build site
+        run: bundle exec jekyll build
+      - name: Publish site
+        env:
+          REPOSITORY: https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        run: |
+          cd _site
+          rm README.md
+          touch .nojekyll
+          git init
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git add .
+          git commit -m "Github Actions - $(date)"
+          git push --force $REPOSITORY master:master
+

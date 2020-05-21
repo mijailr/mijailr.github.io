@@ -10,17 +10,21 @@
 body{
   color: $dark;
 }
+
 @media (min-width: 1200px) {
   .container {
     width: 680px;
   }
 }
+
 header {
   margin-bottom: 1rem;
 }
+
 code {
   font-family: $fira-code;
 }
+
 .profile{
   font-family: $fira-code;
   margin: 1rem 0;
@@ -40,6 +44,7 @@ code {
     }
   }
 }
+
 .profile-links {
   a {
     margin-left: 0.5rem;
@@ -47,12 +52,38 @@ code {
   }
 }
 
+.posts {
+  margin-bottom: 2rem;
+}
+
 .posts h2, .related h2{
   font-size: 1.6rem;
   font-family: $fira-code;
   text-transform: uppercase;
   margin-bottom: 2rem;
+  border-bottom: 1px solid $dark;
 }
+
+.pagination {
+  .pagination-item {
+    padding: 1rem 2rem;
+    border: 1px solid $link-color;
+    border-radius: 3px;
+  }
+
+  a {
+    &:hover {
+      color: #fff;
+      background-color: $link-color;
+      text-decoration: none;
+    }
+  }
+  span {
+    color: $secondary;
+    border: 1px solid $secondary !important;
+  }
+}
+
 .post {
   h1{
     line-height: 1;
@@ -63,10 +94,31 @@ code {
     font-style: italic;
   }
 
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+
   &:last-of-type{
     margin-bottom: 2rem;
   }
+
 }
+
+a.read-more {
+  text-align: center;
+  display: block;
+  padding: 1rem 0;
+  border: 1px solid $secondary;
+  border-radius: 3px;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 
 .image-wrapper {
   color: rgb(88, 96, 105);
@@ -84,9 +136,12 @@ code {
 }
 
 .related {
-h3 {
-  font-size: 1.3rem;
+  margin-top: 3rem;
+  h3 {
+    font-size: 1.3rem;
+  }
 }
 
-
+footer {
+  margin-top: 3rem;
 }

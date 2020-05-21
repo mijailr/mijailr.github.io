@@ -2,6 +2,7 @@
 ---
 @import "variables";
 @import "highlight";
+@import "languages";
 
 @import "bootstrap/scss/bootstrap";
 @import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css);
@@ -85,6 +86,10 @@ code {
 }
 
 .post {
+  .post-metadata{
+    margin-bottom: 1rem;
+  }
+
   h1{
     line-height: 1;
     color: $link-color;

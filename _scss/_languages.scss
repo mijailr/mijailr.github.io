@@ -1,0 +1,68 @@
+.language {
+  margin-right: 1rem;
+  font-size: .9rem;
+  .language-bullet {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    width: .9rem;
+    height: .9rem;
+    border-radius: 50%;
+  }
+
+  .assembly {
+    background-color: #101F1F;
+  }
+
+  .bash {
+    background-color: #1D222D;
+  }
+
+  .css {
+    background-color: #563d7c;
+  }
+
+  .sass {
+    background: #CF649A;
+  }
+
+  .docker {
+    background-color: #384d54;
+  }
+
+  .elixir {
+    background-color: #6e4a7e;
+  }
+
+  .go {
+    background-color: #00ADD8;
+  }
+
+  .graphql {
+    background-color: #D64292;
+  }
+
+  .ini {
+    background-color: #cdd0e3;
+  }
+
+  .java {
+    background-color: #b07219;
+  }
+
+  .javascript {
+    background-color: #f1e05a;
+  }
+
+  .python {
+    background-color: #3572A5;
+  }
+
+  .ruby {
+    background-color: #701516;
+  }
+
+  .typescript {
+    background-color: #2b7489;
+  }
+}

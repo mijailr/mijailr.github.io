@@ -24,12 +24,20 @@ title: Home
   {% for post in paginator.posts %}
   <div class="post">
 
+  <div class="post-metadata">
     <span class="post-date">{{ post.date | date_to_string }}</span>
     <h1 class="post-title">
       <a href="{{ post.url | prepend: site.baseurl }}">
         {{ post.title }}
       </a>
     </h1>
+    {% for language in post.languages %}
+    <span class="language">
+      <span class="language-bullet {{ language | downcase }}"></span>
+      <span class="language-text">{{ language }}</span>
+    </span>
+    {% endfor %}
+  </div>
 
     {{ post.excerpt }}
   </div>

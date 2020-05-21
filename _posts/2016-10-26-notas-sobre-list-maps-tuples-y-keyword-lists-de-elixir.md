@@ -2,6 +2,7 @@
 layout: post
 title: "Notas sobre List, Maps, Tuples y Keyword Lists de Elixir"
 category: Elixir
+languages: [Elixir]
 date: 2016-10-26
 ---
 

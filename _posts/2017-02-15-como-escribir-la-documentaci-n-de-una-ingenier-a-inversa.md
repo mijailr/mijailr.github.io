@@ -2,6 +2,7 @@
 layout: post
 title: "Como escribir la documentación de una ingeniería inversa"
 category: Blog
+languages: [Assembly]
 date: 2017-02-15
 ---
 

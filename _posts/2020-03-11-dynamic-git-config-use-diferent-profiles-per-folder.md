@@ -2,6 +2,7 @@
 layout: post
 title: Dynamic git config - Use diferent profiles per folder
 date: 2020-03-11 23:06 -0500
+languages: [INI]
 ---
 
 Some times we need to use different git profiles to have meaningful commits signatures when we need to use work profiles or personal profiles.

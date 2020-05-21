@@ -2,6 +2,7 @@
 layout: post
 title: "Primeros pasos con Elixir"
 category: Elixir
+languages: [Elixir, Ruby]
 date: 2016-10-17
 ---
 

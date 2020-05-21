@@ -3,6 +3,7 @@ layout: post
 title: "Fuloong Mini 2F6003 con Debian 8 Jessie"
 category: Hardware
 date: 2017-02-21
+languages: [Bash]
 ---
 
 En el laboratorio de Hardware de la Comuna Tecnológica Don Luís Zambrano tenemos disponibles unas Fuloong Mini 2F6003, sin embargo vienen con una distribución modificada de Debian cuyos repositorios ya no están disponibles.

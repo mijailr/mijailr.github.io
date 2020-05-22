@@ -1,0 +1,6 @@
+{% for language in include.languages %}
+<span class="language">
+  <span class="language-bullet {{ language | downcase }}"></span>
+  <span class="language-text">{{ language }}</span>
+</span>
+{% endfor %}

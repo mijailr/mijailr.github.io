@@ -13,6 +13,7 @@ title: Home
         {{ day.title }}
       </a>
     </h1>
+    {% include languages.html languages=day.languages %}
   </div>
   {% endfor %}
   <a class="read-more" href="{{ "days_of_code" | prepend: site.baseurl }}">List days of code</a>
@@ -31,12 +32,7 @@ title: Home
         {{ post.title }}
       </a>
     </h1>
-    {% for language in post.languages %}
-    <span class="language">
-      <span class="language-bullet {{ language | downcase }}"></span>
-      <span class="language-text">{{ language }}</span>
-    </span>
-    {% endfor %}
+    {% include languages.html languages=post.languages %}
   </div>
 
     {{ post.excerpt }}

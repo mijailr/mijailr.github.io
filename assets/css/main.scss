@@ -147,6 +147,18 @@ a.read-more {
   }
 }
 
+blockquote {
+  border-left: 3px solid $primary;
+  padding: 2rem;
+  font-style: italic;
+  font-size: 1.1rem;
+  background-color: $light;
+  color: $dark;
+  border-radius: 3px;
+}
+
 footer {
-  margin-top: 3rem;
+  &.footer {
+    margin-top: 3rem;
+  }
 }

@@ -5,7 +5,8 @@ title: Home
 {% if page.url == "/" %}
 <div class="posts">
   <h2>100 Days of Code</h2>
-  {% for day in site.days_of_code limit:2 %}
+  {% assign days_of_code = site.days_of_code | reverse %}
+  {% for day in days_of_code limit:2 %}
   <div class="post">
     <span class="post-date">{{ day.date | date_to_string }}</span>
     <h1 class="post-title">

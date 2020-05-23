@@ -5,7 +5,8 @@ title: Days of code
 
 <div class="posts">
   <h2>{{ page.title }}</h2>
-  {% for day in site.days_of_code %}
+  {% assign days_of_code = site.days_of_code | reverse %}
+  {% for day in days_of_code %}
   <div class="post">
     <span class="post-date">{{ day.date | date_to_string }}</span>
     <h1 class="post-title">
@@ -13,6 +14,7 @@ title: Days of code
         {{ day.title }}
       </a>
     </h1>
+    {% include languages.html languages=day.languages %}
   </div>
   {% endfor %}
 </div>

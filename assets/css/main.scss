@@ -47,7 +47,12 @@ code {
 }
 
 .profile-links {
+  svg {
+    width: 1.7rem;
+    height: 1.7rem;
+  }
   a {
+    color: $dark;
     margin-left: 0.5rem;
 
   }

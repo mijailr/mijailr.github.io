@@ -27,10 +27,10 @@ Y configuramos un TFTP de la siguiente manera:
 
 Conectamos el Fuloong al teclado, red y monitor y presionamos `<SUPR>` para obtener el prompt de PMON (Suponiendo que el servidor TFTP está en 192.168.1.1):
 
-{% gist db5794341b0cb00d53e0d158bd76e158 pmon_upgrade.txt  %}
+{% gist db5794341b0cb00d53e0d158bd76e158 pmon_upgrade.txt %}
 
 Luego hacer un reboot y esta vez notaremos que hay diferencias cuando arranca el sistema, presionamos nuevamente `<SUPR>` para ingresar al PMON:
 
-{% gist db5794341b0cb00d53e0d158bd76e158 pmon_load_debian.txt   %}
+{% gist db5794341b0cb00d53e0d158bd76e158 pmon_load_debian.txt %}
 
 Y ya con esto inicia la instalación de Debian Jessie.

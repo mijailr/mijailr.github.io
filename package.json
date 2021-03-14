@@ -1,0 +1,11 @@
+{
+  "name": "mijailr.github.io",
+  "version": "1.0.0",
+  "description": "Personal blog",
+  "repository": "git@github.com:mijailr/mijailr.github.io.git",
+  "author": "Mijail Rondon <mijail@riseup.net>",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.5.0"
+  }
+}

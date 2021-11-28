@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>Mijail Rondon</title>
+ <link href="https://mijailr.com/atom.xml" rel="self"/>
+ <link href="https://mijailr.com/"/>
+ <updated>2021-11-28T15:30:21+00:00</updated>
+ <id>https://mijailr.com</id>
+ <author>
+   <name></name>
+   <email></email>
+ </author>
+
+ 
+ <entry>
+   <title>Dynamic git config - Use diferent profiles per folder</title>
+   <link href="https://mijailr.com/2020/03/12/dynamic-git-config-use-diferent-profiles-per-folder/"/>
+   <updated>2020-03-12T04:06:00+00:00</updated>
+   <id>https://mijailr.com/2020/03/12/dynamic-git-config-use-diferent-profiles-per-folder</id>
+   <content type="html">&lt;p&gt;Some times we need to use different git profiles to have meaningful commits signatures when we need to use work profiles or personal profiles.&lt;/p&gt;
+
+&lt;p&gt;You can do this if you use &lt;code class=&quot;highlighter-rouge&quot;&gt;git &amp;gt;= 2.13&lt;/code&gt; with the rule &lt;code class=&quot;highlighter-rouge&quot;&gt;includeIf&lt;/code&gt; you can choose when to use a particular profile when
+you are on a specific folder or subfolders.&lt;/p&gt;
+
+&lt;p&gt;To do that you need to modify the file &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.gitconfig&lt;/code&gt; with this content:&lt;/p&gt;
+
+&lt;div class=&quot;language-ini highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;[user]&lt;/span&gt;
+    &lt;span class=&quot;py&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Your Name&lt;/span&gt;
+    &lt;span class=&quot;py&quot;&gt;email&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;your.personal.email@example.org&lt;/span&gt;
+&lt;span class=&quot;nn&quot;&gt;[includeIf &quot;gitdir:~/Projects/Work/&quot;]&lt;/span&gt;
+    &lt;span class=&quot;py&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;~/.gitconfig-work&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And you should have a file like &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.gitconfig-work&lt;/code&gt; (for this example) with this content:&lt;/p&gt;
+
+&lt;div class=&quot;language-ini highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;[user]&lt;/span&gt;
+    &lt;span class=&quot;py&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Your Name&lt;/span&gt;
+    &lt;span class=&quot;py&quot;&gt;email&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;your.work.email@example-company.com&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You can add as many &lt;code class=&quot;highlighter-rouge&quot;&gt;includeIf&lt;/code&gt; as you need.&lt;/p&gt;
+
+&lt;p&gt;So now if you cd to any git project inside &lt;code class=&quot;highlighter-rouge&quot;&gt;~/Projects/Work&lt;/code&gt; your git config should be like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~ $ git config user.email
+your.personal.email@example.org
+~ $ cd ~/Projects/Work/some-project
+~/Projects/Work/some-project $ git config user.email
+your.work.email@example-company.com
+~/Projects/Work/some-project $ cd ~/Projects/personal-website
+/Projects/personal-website $ git config user.email
+your.personal.email@example.org
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Fuloong Mini 2F6003 con Debian 8 Jessie</title>
+   <link href="https://mijailr.com/hardware/2017/02/21/fuloong-mini-2f6003-con-debian-8-jessie/"/>
+   <updated>2017-02-21T00:00:00+00:00</updated>
+   <id>https://mijailr.com/hardware/2017/02/21/fuloong-mini-2f6003-con-debian-8-jessie</id>
+   <content type="html">&lt;p&gt;En el laboratorio de Hardware de la Comuna Tecnológica Don Luís Zambrano tenemos disponibles unas Fuloong Mini 2F6003, sin embargo vienen con una distribución modificada de Debian cuyos repositorios ya no están disponibles.&lt;/p&gt;
+
+&lt;div class=&quot;image-wrapper&quot;&gt;
+    
+        &lt;img class=&quot;img-fluid&quot; src=&quot;https://mijailr.com/public/images/fuloong/fuloong-mini.jpg&quot; alt=&quot;Fuloong Mini&quot; /&gt;
+    
+    
+        &lt;p class=&quot;image-caption&quot;&gt;Fuloong Mini 2F6003&lt;/p&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Como requeríamos de un mirror local de Debian Jessie, decidimos darles uso, por lo que empezamos a averiguar como instalarla.&lt;/p&gt;
+
+&lt;p&gt;Sabemos que el procesador de esta máquina es un MipsEL Loongson2F (Little Endian) y por algún lado en internet, por lo que descargamos directo la distribución para este procesador desde &lt;a href=&quot;http://ftp.nl.debian.org/debian/dists/jessie/main/installer-mipsel/current/images/loongson-2f/netboot/&quot;&gt;Debian MIPSEL&lt;/a&gt; sin embargo, al intentar instalar desde una memoria USB y colocando los archivos nos daba un Kernel Panic. Por lo que leyendo en foros y otros sitios en internet, nos dimos cuenta de que era necesario actualizar el BIOS del Fuloong PMON-2000, el cual logramos conseguir en su última version “Estable” &lt;a href=&quot;http://github.com/mijailr/bootloaders&quot;&gt;pmon-LM60xx-1.3.6a.bin&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Y configuramos un TFTP de la siguiente manera:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;|--- fuloong/
+     |--- jessie/
+          |--- initrd.gz
+          |--- vmlinuz-3.16.0-4-loongson-2f
+     |--- pmon-LM60xx-1.3.6a.bin
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Conectamos el Fuloong al teclado, red y monitor y presionamos &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;SUPR&amp;gt;&lt;/code&gt; para obtener el prompt de PMON (Suponiendo que el servidor TFTP está en 192.168.1.1):&lt;/p&gt;
+
+&lt;noscript&gt;&lt;pre&gt;400: Invalid request&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/db5794341b0cb00d53e0d158bd76e158.js?file=pmon_upgrade.txt&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;Luego hacer un reboot y esta vez notaremos que hay diferencias cuando arranca el sistema, presionamos nuevamente &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;SUPR&amp;gt;&lt;/code&gt; para ingresar al PMON:&lt;/p&gt;
+
+&lt;noscript&gt;&lt;pre&gt;400: Invalid request&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/db5794341b0cb00d53e0d158bd76e158.js?file=pmon_load_debian.txt&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;Y ya con esto inicia la instalación de Debian Jessie.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Como escribir la documentación de una ingeniería inversa</title>
+   <link href="https://mijailr.com/blog/2017/02/15/como-escribir-la-documentaci-n-de-una-ingenier-a-inversa/"/>
+   <updated>2017-02-15T00:00:00+00:00</updated>
+   <id>https://mijailr.com/blog/2017/02/15/como-escribir-la-documentaci-n-de-una-ingenier-a-inversa</id>
+   <content type="html">&lt;p&gt;Me ha surgido la oportunidad con &lt;a href=&quot;http://gnu.org.ve&quot;&gt;Proyecto GNU Venezuela&lt;/a&gt; de realizar la ingeniería inversa de un dispositivo (el cual no describiré por motivos de confidencialidad) pero escribo estas notas para futuras referencias en proyectos similares.&lt;/p&gt;
+
+&lt;p&gt;Mi mayor error fue realizar toda la ingeniería inversa sin documentar siquiera un paso, por lo que me tocó prácticamente rehacer todo para acordarme de lo que había hecho, por eso decidí escribir un manual sobre &lt;strong&gt;como escribir la documentación de una ingeniería inversa&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;lo-primero&quot;&gt;Lo primero:&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Tomar fotografías del dispositivo (nunca sobran y siempre hacen falta)&lt;/li&gt;
+  &lt;li&gt;Tomar nota de lo que se va haciendo incluso si es un intento fallido (lo que no funciona también requiere trabajo y hay que demostrarlo)&lt;/li&gt;
+  &lt;li&gt;Describir hasta lo obvio (La documentación siempre es para el uso de otras personas, no tomes nada como obvio)&lt;/li&gt;
+  &lt;li&gt;Incluir enlaces de descripciones, esquemáticos, software, etc&lt;/li&gt;
+  &lt;li&gt;Discutir los borradores en equipo (no vaya a ser que seas el único ser viviente que lo entienda)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;material-útil-para-inspiración&quot;&gt;Material útil para inspiración:&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;El sempiterno &lt;a href=&quot;http://www.devttys0.com&quot;&gt;devtty0&lt;/a&gt; incluye información vital para guiarse en el proceso.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Notas sobre List, Maps, Tuples y Keyword Lists de Elixir</title>
+   <link href="https://mijailr.com/elixir/2016/10/26/notas-sobre-list-maps-tuples-y-keyword-lists-de-elixir/"/>
+   <updated>2016-10-26T00:00:00+00:00</updated>
+   <id>https://mijailr.com/elixir/2016/10/26/notas-sobre-list-maps-tuples-y-keyword-lists-de-elixir</id>
+   <content type="html">&lt;p&gt;Estoy leyendo el capítulo 2 de &lt;strong&gt;Elixir in Action&lt;/strong&gt; y llegado al momento en que describe cada uno de los elementos &lt;em&gt;[List, Maps, Tuples, Keyword Lists, HashDict y HashSet]&lt;/em&gt; consideré importante tomar nota de la diferencia de cada uno, ya que en un principio se ve confuso. Quizás más adelante y con más práctica se vuelva algo natural, veamos:&lt;/p&gt;
+
+&lt;h3 id=&quot;list&quot;&gt;List&lt;/h3&gt;
+
+&lt;p&gt;Las &lt;strong&gt;List&lt;/strong&gt; son usadas para administrar colecciones de datos dinámicos de tamaño variable y su sintaxis es similar a la del Array para (algunos) otros lenguajes. Pero aunque son similares a los Arrays para hacer algo con una lista hay que pasar por cada uno de sus miembros.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-elixir&quot; data-lang=&quot;elixir&quot;&gt;&lt;span class=&quot;n&quot;&gt;iex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Uno&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;tres&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Uno&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;tres&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;maps&quot;&gt;Maps&lt;/h3&gt;
+
+&lt;p&gt;Los &lt;strong&gt;Maps&lt;/strong&gt; guardan valores de modo key-value donde tanto el &lt;em&gt;key&lt;/em&gt; como el &lt;em&gt;value&lt;/em&gt; puede tener cualquier cosa, y son muy útiles para combinar varios campos dentro de una estructura, es similar a los &lt;em&gt;Tuples&lt;/em&gt; y &lt;em&gt;HashDict&lt;/em&gt; pero ofrece la posibilidad de acceder a un campo por su nombre cuando este es un &lt;em&gt;Atom&lt;/em&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-elixir&quot; data-lang=&quot;elixir&quot;&gt;&lt;span class=&quot;n&quot;&gt;iex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;%{&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;uno:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;dos:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;%{&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;dos:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;uno:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;iex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uno&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;iex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:dos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;tuples&quot;&gt;Tuples&lt;/h3&gt;
+
+&lt;p&gt;Son algo como &lt;em&gt;estructuras de datos sin tipo que se usan para agrupar un número fijo de elementos&lt;/em&gt; para devolver el dato de un Tuple, se utiliza la función &lt;em&gt;Kernel.elem/2&lt;/em&gt; el cual acepta una Tuple y el indice del elemento en entero y para modificarlo se usa &lt;em&gt;Kernel.put_elem/3&lt;/em&gt; con la Tuple, el index y el nuevo valor. Por la naturaleza inmutable de Elixir, no se modifica a nivel de memoria, por lo que hay que reasignarlo a la variable.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-elixir&quot; data-lang=&quot;elixir&quot;&gt;&lt;span class=&quot;n&quot;&gt;iex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tuple&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;uno&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;tres&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;uno&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;tres&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;iex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tuple&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;&quot;uno&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;iex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;put_elem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tuple&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;dos&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;uno&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;dos&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;tres&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;keyword-list&quot;&gt;Keyword List&lt;/h3&gt;
+
+&lt;p&gt;Los &lt;strong&gt;Keyword List&lt;/strong&gt; son listas donde cada elemento son un Tuple de dos elementos, el primer elemento debe ser un Atom y el segundo de cualquier tipo, pero conserva las mismas características de una List y para seleccionar un elemento se utiliza &lt;em&gt;Keyword.get/2&lt;/em&gt; donde se otorga el &lt;strong&gt;Keyword List&lt;/strong&gt; y el Atom correspondiente.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-elixir&quot; data-lang=&quot;elixir&quot;&gt;&lt;span class=&quot;n&quot;&gt;iex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keyword&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;uno:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;dos:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;uno:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;dos:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;iex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Keyword&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keyword&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:dos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Primeros pasos con Elixir</title>
+   <link href="https://mijailr.com/elixir/2016/10/17/primeros-pasos-con-elixir/"/>
+   <updated>2016-10-17T00:00:00+00:00</updated>
+   <id>https://mijailr.com/elixir/2016/10/17/primeros-pasos-con-elixir</id>
+   <content type="html">&lt;p&gt;Desde hace algún tiempo, vengo escuchando sobre &lt;a href=&quot;http://elixir-lang.org/&quot;&gt;Elixir&lt;/a&gt; y la verdad no le había prestado atención porque con &lt;a href=&quot;http://www.ruby-lang.org/en/&quot;&gt;Ruby&lt;/a&gt; tenía lo suficiente para hacer lo que necesitaba. Sin embargo, últimamente he estado sintiendo presión social para aprender &lt;em&gt;Elixir&lt;/em&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Elixir es un lenguaje dinámico y funcional diseñado para construir aplicaciones escalables y mantenibles.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Creo que el mejor recurso para aprender que es Elixir es yendo directamente a la fuente, por lo que recomiendo leer (completo) &lt;a href=&quot;https://elixirschool.com&quot;&gt;Elixir-School&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;No había tenido previamente ninguna experiencia con &lt;strong&gt;Functional Programming&lt;/strong&gt; (al menos no conscientemente) y &lt;em&gt;Ruby me acostumbro a ver todo como un objeto&lt;/em&gt; por lo que tuve que hacer un esfuerzo en romper el OOP. Hay una serie de artículos de Charles Scalfani(&lt;a href=&quot;https://twitter.com/cscalfani&quot;&gt;@cscalfani&lt;/a&gt;) que me ayudaron bastante a comprender este tema: &lt;a href=&quot;https://medium.com/@cscalfani/so-you-want-to-be-a-functional-programmer-part-1-1f15e387e536#.efetv2g1r&quot;&gt;So You Want to be a Functional Programmer&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Hay que dedicarle un tiempo a esa sección y derrepente sentirás que la &lt;em&gt;programación funcional&lt;/em&gt; es más natural que la &lt;em&gt;orientada a objetos&lt;/em&gt;. Llegados a este punto, hay que leer obligatoriamente la guía &lt;a href=&quot;https://elixir-lang.org/getting-started/introduction.html&quot;&gt;&lt;em&gt;“Elixir Getting Started Guide”&lt;/em&gt;&lt;/a&gt; mientras lo leía, se me hacía necesario aplicar algunos elementos para entender mejor su funcionamiento, por lo que empecé a utilizar &lt;a href=&quot;https://exercism.io&quot;&gt;Exercism&lt;/a&gt; para realizar algunos ejercicios. También realicé completo el &lt;a href=&quot;https://github.com/elixirkoans/elixir-koans&quot;&gt;elixir-koans&lt;/a&gt; lo cual es muy util para entender algunos comportamientos.&lt;/p&gt;
+
+&lt;p&gt;La sintaxis de Elixir está inspirada en Ruby y esa es una de las cosas que más me agrada, lo otro que le da un plus es que la comunidad apenas está creciendo, por lo que representa una oportunidad para aportar en el desarrollo.&lt;/p&gt;
+
+&lt;p&gt;Aqui dejo un ejemplo del famoso &lt;code class=&quot;highlighter-rouge&quot;&gt;HolaMundo&lt;/code&gt; para Ruby y Elixir respectivamente&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# Con Ruby&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;HolaMundo&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hola&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;quien&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Mundo&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hola &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;quien&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;!&quot;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Luego en &lt;code class=&quot;highlighter-rouge&quot;&gt;irb&lt;/code&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;mo&quot;&gt;001&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;HolaMundo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hola&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Mijail&quot;&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;Hola&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Mijail&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Con Elixir no es muy diferente, sólo que en vez de &lt;code class=&quot;highlighter-rouge&quot;&gt;module&lt;/code&gt; se usa &lt;code class=&quot;highlighter-rouge&quot;&gt;defmodule&lt;/code&gt; (las clases no existen), para cada inicio de bloque hay que usar &lt;code class=&quot;highlighter-rouge&quot;&gt;do&lt;/code&gt;, los valores predeterminados de una variable se definen con &lt;code class=&quot;highlighter-rouge&quot;&gt;\\&lt;/code&gt; y para usar &lt;code class=&quot;highlighter-rouge&quot;&gt;puts&lt;/code&gt; hay que hacer referencia al módulo que lo contiene &lt;code class=&quot;highlighter-rouge&quot;&gt;IO&lt;/code&gt; a menos que lo hagas con &lt;code class=&quot;highlighter-rouge&quot;&gt;alias&lt;/code&gt; pero no voy a profundizar en eso por ahora.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-elixir&quot; data-lang=&quot;elixir&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# Con Elixir&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;defmodule&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;HolaMundo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hola&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;quien&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;\\&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Mundo&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;IO&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hola &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;quien&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;!&quot;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Luego en &lt;code class=&quot;highlighter-rouge&quot;&gt;iex&lt;/code&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-elixir&quot; data-lang=&quot;elixir&quot;&gt;&lt;span class=&quot;n&quot;&gt;iex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;HolaMundo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hola&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Mijail&quot;&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;Hola&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Mijail&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;!&lt;/span&gt;
+&lt;span class=&quot;ss&quot;&gt;:ok&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Como pueden notar, se parecen tanto que parece lo mismo, de verdad recomiendo empezar ya a aprender Elixir.&lt;/p&gt;
+
+&lt;p&gt;Actualmente estoy leyendo &lt;em&gt;“Elixir in Action”&lt;/em&gt; para profundizar un poco más en el tema.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;OJO:&lt;/strong&gt; Recomiendo también unirse al canal en &lt;a href=&quot;https://elixir-slackin.herokuapp.com/&quot;&gt;#Slack elixir-lang&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Nuevo Blog!</title>
+   <link href="https://mijailr.com/jekyll/2016/10/02/nuevo-blog/"/>
+   <updated>2016-10-02T03:27:43+00:00</updated>
+   <id>https://mijailr.com/jekyll/2016/10/02/nuevo-blog</id>
+   <content type="html">&lt;p&gt;Durante varios años (2008-2012) mantuve un blog con wordpress con mi dominio mijailr.com, sin embargo, por algunas cuestiones que aún no me explico, perdí el dominio y fue comprado por alguien que me pedía 200$ para devolvermelo, una total locura, pero luego de varios años (3) y por curiosidad, volví a chequear el status del dominio y para mi sorpresa, estaba disponible nuevamente.&lt;/p&gt;
+
+&lt;p&gt;Como habían pasado tantos años, todo el contenido del blog en wordpress lo perdí, aunque aún se pueden ver algunas cosas en &lt;a href=&quot;http://web.archive.org&quot;&gt;Archive.ORG&lt;/a&gt;, prefiero hacer borrón y cuenta nueva.&lt;/p&gt;
+
+&lt;p&gt;Como llevo varios años trabajando con Ruby, voy a hacerlo con &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll&lt;/code&gt; y &lt;code class=&quot;highlighter-rouge&quot;&gt;github-pages&lt;/code&gt;, para de una vez por todas liberarme del cancer de PHP para mantener mi blog.&lt;/p&gt;
+
+&lt;p&gt;Este post es de referencia, para marcar el inicio.&lt;/p&gt;
+</content>
+ </entry>
+ 
+
+</feed>

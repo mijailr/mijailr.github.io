@@ -19,7 +19,7 @@ body{
 }
 
 header {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 code {
@@ -43,6 +43,14 @@ code {
       display: block;
       font-size: 1.3rem;
     }
+  }
+  .avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 1rem;
   }
 }
 

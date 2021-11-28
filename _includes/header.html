@@ -1,32 +1,27 @@
 <header class="container">
   <div class="profile">
-    <img class="img-fluid mx-auto d-block" src="{{'/assets/images/avatar.png' | prepend: site.baseurl }}" alt="Mijail Rondon profile photo">
-    <h1><a href="/">MIJAIL RONDON <small>Full-stack developer consultant</small></a></h1>
+    {% include svg/avatar.svg %}
+    <h1><a href="/">{{ site.title | upcase }} <small>{{ site.tagline }}</small></a></h1>
   </div>
   <ul class="nav justify-content-center profile-links">
     <li>
-      <a href="https://github.com/mijailr">
+      <a href="https://github.com/{{ site.main_username }}">
         {% include svg/github.svg %}
       </a>
     </li>
     <li>
-      <a href="https://twitter.com/mijailr">
+      <a href="https://twitter.com/{{ site.main_username }}">
         {% include svg/twitter.svg %}
       </a>
     </li>
     <li>
-      <a href="https://keybase.io/mijail">
+      <a href="https://keybase.io/{{ site.keybase_username }}">
         {% include svg/keybase.svg %}
       </a>
     </li>
     <li>
-      <a href="https://www.linkedin.com/in/mijailr/">
+      <a href="https://www.linkedin.com/in/{{ site.main_username }}/">
         {% include svg/linkedin.svg %}
-      </a>
-    </li>
-    <li>
-      <a href="mailto:mijail@hey.com">
-        {% include svg/mail.svg %}
       </a>
     </li>
   </ul>

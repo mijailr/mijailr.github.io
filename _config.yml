@@ -1,12 +1,11 @@
 title: Mijail Rondon
 email: yo@mijailr.com
-description: 'Blog <a href="https://twitter.com/mijailr">@MijailR</a>'
-tagline: "Developer, hacker, and free software activist."
+tagline: "Senior Developer Consultant"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://mijailr.com" # the base hostname & protocol for your site
-twitter_username: mijailr
-github_username:  mijailr
-paginate: 2
+main_username: mijailr
+keybase_username:  mijailr
+paginate: 10
 permalink: pretty
 markdown: kramdown
 paginate_path: "page:num"

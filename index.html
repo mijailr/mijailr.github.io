@@ -2,24 +2,6 @@
 layout: default
 title: Home
 ---
-{% if page.url == "/" %}
-<div class="posts">
-  <h2>100 Days of Code</h2>
-  {% assign days_of_code = site.days_of_code | reverse %}
-  {% for day in days_of_code limit:2 %}
-  <div class="post">
-    <span class="post-date">{{ day.date | date_to_string }}</span>
-    <h1 class="post-title">
-      <a href="{{ day.url | prepend: site.baseurl }}">
-        {{ day.title }}
-      </a>
-    </h1>
-    {% include languages.html languages=day.languages %}
-  </div>
-  {% endfor %}
-  <a class="read-more" href="{{ "days_of_code" | prepend: site.baseurl }}">List days of code</a>
-</div>
-{% endif %}
 
 <div class="posts">
   <h2>Articles</h2>
